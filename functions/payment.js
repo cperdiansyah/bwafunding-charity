@@ -1,3 +1,5 @@
+const { MIDTRANS_SERVER_KEY, MIDTRANS_CLIENT_KEY } = require('../src/stores/data');
+
 exports.handler = function (event, context, callback) {
     const Midtrans = require('midtrans-client');
 
@@ -9,8 +11,8 @@ exports.handler = function (event, context, callback) {
 
     const snap = new Midtrans.Snap({
         isProduction: true,
-        serverKey: process.env.MIDTRANS_SERVER_KEY,
-        clientKey: process.env.MIDTRANS_CLIENT_KEY
+        serverKey: MIDTRANS_SERVER_KEY,
+        clientKey: MIDTRANS_CLIENT_KEY
     });
 
     const { id, name, email, amount } = JSON.parse(event.body);

@@ -28,7 +28,7 @@
     newData.pledged = newData.pledged + parseInt(amount);
     try {
       const res = await fetch(
-        `https://charity-api-bwa.herokuapp.com/charities/${$params.id}`,
+        `${REACT_APP_API_BASE_URL}/charities/${$params.id}`,
         {
           method: "PUT",
           headers: {
